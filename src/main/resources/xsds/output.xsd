@@ -1846,7 +1846,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="es:serviceState"/>
-        <xs:element ref="es:plmnIdList"/>
+        <xs:element ref="es:pLMNIdList"/>
         <xs:element ref="es:sNSSAIList"/>
         <xs:element ref="es:nRTAC"/>
         <xs:element ref="es:nRFrequencyRef"/>
@@ -4368,7 +4368,7 @@
         </xs:choice>
         <xs:element ref="es:threshXLowP"/>
         <xs:element ref="es:threshXLowQ"/>
-        <xs:element ref="es:plmnIdList"/>
+        <xs:element ref="es:pLMNIdList"/>
         <xs:element ref="es:sIntraSearchQ"/>
         <xs:element ref="es:anrMeasOn"/>
         <xs:element ref="es:mcpcPSCellNrFreqRelProfileRef"/>
@@ -8115,14 +8115,7 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="consistsOf" type="xs:string"/>
-  <xs:element name="plmnIdList">
-    <xs:complexType>
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element ref="es:mcc"/>
-        <xs:element ref="es:mnc"/>
-      </xs:choice>
-    </xs:complexType>
-  </xs:element>
+
   <xs:element name="serialNumber" type="xs:string"/>
   <xs:element name="ipv6Address" type="xs:NMTOKEN"/>
   <xs:element name="ipv4Address" type="xs:NMTOKEN"/>
