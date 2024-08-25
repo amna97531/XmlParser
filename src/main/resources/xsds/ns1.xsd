@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="configData.xsd" xmlns:xn="genericNrm.xsd" xmlns:es="EricssonSpecificAttributes.xsd" xmlns:ns1="configData.xsd">
+  <xs:import namespace="EricssonSpecificAttributes.xsd" schemaLocation="output.xsd"/>
+  <xs:import namespace="genericNrm.xsd" schemaLocation="xn.xsd"/>
+  <xs:element name="bulkCmConfigDataFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:fileHeader"/>
+        <xs:element ref="ns1:configData"/>
+        <xs:element ref="ns1:fileFooter"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fileHeader">
+    <xs:complexType>
+      <xs:attribute name="fileFormatVersion" use="required"/>
+      <xs:attribute name="vendorName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="configData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="xn:SubNetwork"/>
+      </xs:sequence>
+      <xs:attribute name="dnPrefix" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fileFooter">
+    <xs:complexType>
+      <xs:attribute name="dateTime" use="required" type="xs:dateTime"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
